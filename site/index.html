@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Depremler mi arttı, ölçüm mü? – Veri Hikâyesi</title>
+<meta name="description" content="Türkiye'de depremler gerçekten artıyor mu, yoksa izleme ağı genişlediği için mi daha fazla deprem kaydediliyor? USGS ve AFAD kataloglarıyla 1996–2025 etkileşimli veri hikâyesi.">
+<meta name="author" content="Said Özen">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Depremler mi arttı, ölçüm mü?">
+<meta property="og:description" content="USGS ve AFAD kataloglarıyla Türkiye'de kayıtlı deprem sayısının hikâyesi.">
+<meta property="og:url" content="https://saidozen-deprem.netlify.app/">
+<meta property="og:image" content="https://saidozen-deprem.netlify.app/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230072B2'/%3E%3Cpath d='M4 18h5l3-9 4 15 3-9h9' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#hikaye">Hikâyeye geç</a>
+
+<header class="hero">
+  <p class="hero-kicker">Veri hikâyesi · Türkiye, 1996–2025</p>
+  <h1>Depremler mi arttı,<br>yoksa ölçüm mü genişledi?</h1>
+  <p class="hero-lead">Kataloglarda kayıtlı deprem sayısı yıllar içinde çok değişiyor. Bu değişimin ne kadarı yer altından, ne kadarı dinleyen cihazlardan geliyor?</p>
+  <p class="hero-bulgu">Büyük depremlerde düzenli bir artış yok. Küçük depremlerde ölçüm biçimi değiştiği için yıllar birbiriyle karşılaştırılamıyor.</p>
+  <p class="hero-cue" aria-hidden="true">Aşağı kaydır</p>
+</header>
+
+<main id="hikaye">
+  <section class="prose" id="baglam">
+    <h2>Neden önemli?</h2>
+    <p>İnsanlar depremlerin artıp artmadığını çoğunlukla korku ve hazırlık yüzünden merak eder. Ama kataloglardaki sayı, yerin altında olanı tek başına anlatmaz. Bu sayfada USGS ve AFAD kataloglarına bakıp kayıtlı deprem sayısındaki değişimin ne kadarının gerçekten depremlerden, ne kadarının ölçüm biçiminden geldiğini adım adım inceliyorum.</p>
+  </section>
+
+  <div class="story">
+    <figure class="chart-wrap" aria-labelledby="chart-title">
+      <figcaption>
+        <span id="chart-title" class="chart-title"></span>
+        <span id="chart-sub" class="chart-sub"></span>
+      </figcaption>
+      <div id="chart" role="img" aria-label="Yıllara göre deprem sayısı grafiği"></div>
+      <div id="legend" class="legend" aria-hidden="true"></div>
+      <p id="chart-src" class="chart-src"></p>
+      <p id="veri-hata" class="veri-hata" hidden></p>
+    </figure>
+
+    <div class="steps" id="steps">
+      <section class="step" data-step="0" data-view="toplam">
+        <div class="card">
+          <h2>Önce katalogdaki sayıya bak</h2>
+          <p>M2 ve üzeri depremlerde sayı yıldan yıla çalkantılı bir seyir izliyor. Büyük depremlerin olduğu yıllarda artış var.</p>
+        </div>
+      </section>
+      <section class="step" data-step="1" data-view="toplam-2009">
+        <div class="card">
+          <h2>2009'da bir şey değişiyor</h2>
+          <p>Bence küçük depremler bitmedi. AFAD'ın kurulmasıyla ölçüm biçimi değişmiş olabilir.</p>
+        </div>
+      </section>
+      <section class="step" data-step="2" data-view="mc">
+        <div class="card">
+          <h2>Katalog küçük depremleri görmeyi bıraktı</h2>
+          <p>Mc, katalogun güvenle yakaladığı en küçük deprem büyüklüğüdür. 2009'dan sonra Mc yükselmiş, bu da katalogun küçük depremleri görmesini zorlaştırmış. Kayıtlı deprem sayısı bu yüzden düşmüş.</p>
+        </div>
+      </section>
+      <section class="step" data-step="3" data-view="pay">
+        <div class="card">
+          <h2>Kaydı kim tutuyor?</h2>
+          <p>Bölgesel kaynakların payı 2009'dan sonra azaldı, bu yüzden kayıtlar artık daha çok küresel ağdan geliyor.</p>
+        </div>
+      </section>
+      <section class="step" data-step="4" data-view="m4">
+        <div class="card">
+          <h2>İki katalog, aynı kutu, M4 ve üzeri</h2>
+          <p>1996'da AFAD'ın M4 ve üzeri sayısı USGS'nin yaklaşık iki katıydı (158'e 81). Fark yıllar içinde kapandı, bence ağ iyileştiği için. 2025'te ise USGS daha yüksek (503'e 329), bunun da ölçüm ağının iyileşmesiyle ilgili olduğunu düşünüyorum.</p>
+        </div>
+      </section>
+      <section class="step" data-step="5" data-view="m5">
+        <div class="card">
+          <h2>Büyük depremlerde kataloglar aynı fikirde</h2>
+          <p>Büyük depremleri ölçmek daha kolay olduğu için büyük depremlerde yanılma daha azdır. M5 ve üzerinde iki katalog bu yüzden birbirine yakın (1996'da 8'e 8, 2004'te 12'ye 12).</p>
+        </div>
+      </section>
+      <section class="step" data-step="6" data-view="istasyon">
+        <div class="card">
+          <h2>Cihaz sayısı arttı, M4+ sayısı artmadı</h2>
+          <p>İstasyon sayısı arttı ama AFAD'ın M4 ve üzeri deprem sayısında düzenli bir artış yok, dalgalanma var. Bu yüzden veri, ağ genişledi diye daha çok deprem kaydediliyor fikrini desteklemiyor. Ama M4 ve üzeri depremler zaten yakalanabiliyordu. Biz sadece ona baktığımız için küçük depremlerdeki artışı göremedik.</p>
+        </div>
+      </section>
+      <section class="step" data-step="7" data-view="kesif">
+        <div class="card">
+          <h2>Şimdi sen dene</h2>
+          <p>Büyüklük eşiğini ve yıl aralığını değiştirerek grafiği kendin incele.</p>
+          <div class="controls" id="controls">
+            <label>Büyüklük eşiği
+              <select id="ctl-esik">
+                <option value="m2">M2 ve üzeri (yalnız USGS)</option>
+                <option value="m4" selected>M4 ve üzeri</option>
+                <option value="m5">M5 ve üzeri</option>
+              </select>
+            </label>
+            <label>Başlangıç yılı <output id="out-bas">1996</output>
+              <input type="range" id="ctl-bas" min="1996" max="2025" value="1996">
+            </label>
+            <label>Bitiş yılı <output id="out-bit">2025</output>
+              <input type="range" id="ctl-bit" min="1996" max="2025" value="2025">
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="prose" id="sonuc">
+    <h2>Sonuç</h2>
+    <p>Artış görünen yıllar (2009 öncesi ve 2023) çoğunlukla ölçüm değişikliği ya da büyük depremlerin artçıları olabilir. M4'ten küçük depremlerde ağ genişlemesinin etkisini ölçemedim, çünkü AFAD verisi yalnızca M4 ve üzeri.</p>
+  </section>
+
+  <section class="prose" id="yontem">
+    <h2>Yöntem ve sınırlamalar</h2>
+    <ul>
+      <li><strong>Veri kaynakları ve erişim:</strong> USGS ComCat deprem kataloğu (<a href="https://earthquake.usgs.gov/fdsnws/event/1/" rel="noopener">API</a>) ve AFAD deprem kataloğu (<a href="https://deprem.afad.gov.tr/event-instrumental" rel="noopener">AFAD</a>). Erişim tarihi: Ekim 2026. Lisans: USGS verisi kamu malıdır, AFAD verisi için kurumun kullanım koşulları geçerlidir.</li>
+      <li><strong>Kapsam:</strong> USGS için enlem 35,5–42,5, boylam 25,5–45, M2 ve üzeri, 1996–2026. AFAD için yalnızca M4 ve üzeri indirilebildi. Eksik yıl olan 2026 grafiklere alınmadı, yıllar 1996–2025.</li>
+      <li><strong>Temizleme:</strong> USGS yıllık sayılarda yer adında Türkiye geçen kayıtlar kullanıldı (Kahramanmaraş kayıtları dahil edildi). AFAD tarihleri gün-ay-yıl biçiminde okundu, okunamayan tarih kalmadı. Karşılaştırma tablosunda ise iki katalog aynı koordinat kutusunda sayıldı. Bu yüzden iki USGS M4+ sayısı birbirinden farklıdır (yer adı süzgeci ile koordinat kutusu).</li>
+      <li><strong>Aynı kutu:</strong> Koordinat kutusu komşu ülkelerin bir kısmını da içerir.</li>
+      <li><strong>Tamlık büyüklüğü (Mc):</strong> Yıllık büyüklük histogramının tepe noktasından kaba biçimde tahmin edildi, resmî bir tamlık analizi değildir.</li>
+      <li><strong>Bölgesel kaynak payı:</strong> USGS <code>magSource</code> alanındaki isk, ath, the kodlarının payı. Kodların hangi kurumlara karşılık geldiği doğrulanmadı.</li>
+      <li><strong>İstasyon sayıları:</strong> Haberlerden ve resmî açıklamalardan derlendi, yaklaşık değerlerdir. Kaynakları <code>site/data/istasyon_sayisi.csv</code> dosyasında verilmiştir.</li>
+      <li><strong>Sınırlama:</strong> M4 altında AFAD kataloğu indirilemediği için ağ genişlemesinin küçük depremler üzerindeki etkisi bu veriyle doğrudan gözlenemez.</li>
+      <li><strong>Araçlar:</strong> Python (pandas, numpy) ve Google Colab ile analiz, D3 ile grafikler, Scrollama ile kaydırma. <a href="https://github.com/saidozen/deprem-hikayesi" rel="noopener">GitHub deposu ve analiz defteri</a>.</li>
+      <li><strong>Yapay zekâ kullanımı:</strong> Kod yazma ve hata ayıklama desteği için Claude (Anthropic) kullanıldı. Hikâye metni ve yorumlar yazarın kendisine aittir.</li>
+      <li><strong>Lisanslar:</strong> D3 (ISC), Scrollama (MIT).</li>
+    </ul>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div>
+    <p class="who">Said Özen</p>
+    <p>Öğrenci No: 2516016014</p>
+    <p>Büyük Veri Analistliği · Kullanıcı Arayüzü Tasarımı dönem ödevi</p>
+  </div>
+  <ul class="links">
+    <li><a href="mailto:Said.ozen@icloud.com">Said.ozen@icloud.com</a></li>
+    <li><a href="https://github.com/saidozen" rel="noopener">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/said-%C3%B6zen-7867ab43a" rel="noopener">LinkedIn</a></li>
+    <li><a href="https://saidozen.github.io/portfolyo/" rel="noopener">Portfolyoya dön</a></li>
+  </ul>
+</footer>
+
+<script src="js/vendor/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/scrollama@3.2.0/build/scrollama.min.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
